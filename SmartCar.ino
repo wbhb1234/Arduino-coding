@@ -13,10 +13,10 @@ int position_now;		//当前位置信息
 int position_old;		//上一时刻位置信息
 
 //电机引脚定义
-const int ENA =5;
-const int INA = 7;
-const int INB = 8;
-const int ENB =6;
+const int ENA =7;
+const int INA = 5;
+const int INB = 6;
+const int ENB =8;
 
 void sensorinit(int s1);	//传感器初始化
 void getpostion(void);		//获取位置信息
@@ -38,7 +38,7 @@ void setup()
 	pinMode(ENA,OUTPUT);
 	pinMode(ENB,OUTPUT);
 	analogWrite(ENA,0);
-	analogWrite(ENB,50);
+	analogWrite(ENB,100);
 	//串口初始化 
 	Serial.begin(9600);
 	while (!Serial) {
@@ -137,7 +137,7 @@ void changeservo(void)
 	{
 		case 1:
 		{
-			pos = RightMAX;
+			pos = LeftMAX;
 			duoji.write(pos);
 		}break;
 		case 2:
@@ -161,7 +161,7 @@ void changeservo(void)
 		}break;
 		case 9:
 		{
-			pos = LeftMAX;
+			pos = RightMAX;
 			duoji.write(pos);
 		}break;
 	}
