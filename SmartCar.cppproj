@@ -54,6 +54,7 @@
     <ListValues>
       <Value>__AVR_ATmega328p__</Value>
       <Value>__AVR_ATmega328P__</Value>
+      <Value>_VMDEBUG=1</Value>
       <Value>ARDUINO=10608</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=16000000L</Value>
@@ -64,14 +65,16 @@
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>D:/Program Files (x86)/Arduino/libraries/Servo/src</Value>
-      <Value>D:/Program Files (x86)/Arduino/libraries/Servo/src/utility</Value>
+      <Value>../_micro-api/libraries/PID_v1</Value>
+      <Value>../_micro-api/libraries/PID_v1/utility</Value>
+      <Value>../_micro-api/libraries/Servo/src</Value>
+      <Value>../_micro-api/libraries/Servo/src/utility</Value>
       <Value>D:/Program Files (x86)/Arduino/libraries</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Users/WeeeeeeB/Documents/Arduino/libraries</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard</Value>
-      <Value>../../../SmartCar</Value>
+      <Value>../../../Arduino-coding</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
@@ -88,6 +91,7 @@
     <ListValues>
       <Value>__AVR_ATmega328p__</Value>
       <Value>__AVR_ATmega328P__</Value>
+      <Value>_VMDEBUG=1</Value>
       <Value>ARDUINO=10608</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=16000000L</Value>
@@ -98,14 +102,16 @@
   </avrgcccpp.compiler.symbols.DefSymbols>
   <avrgcccpp.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>D:/Program Files (x86)/Arduino/libraries/Servo/src</Value>
-      <Value>D:/Program Files (x86)/Arduino/libraries/Servo/src/utility</Value>
+      <Value>../_micro-api/libraries/PID_v1</Value>
+      <Value>../_micro-api/libraries/PID_v1/utility</Value>
+      <Value>../_micro-api/libraries/Servo/src</Value>
+      <Value>../_micro-api/libraries/Servo/src/utility</Value>
       <Value>D:/Program Files (x86)/Arduino/libraries</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Users/WeeeeeeB/Documents/Arduino/libraries</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard</Value>
-      <Value>../../../SmartCar</Value>
+      <Value>../../../Arduino-coding</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
@@ -119,7 +125,7 @@
   <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
 </AvrGccCpp>
     </ToolchainSettings>
-    <VMSETTING_IncludePaths>D:/Program Files (x86)/Arduino/libraries;D:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Users/WeeeeeeB/Documents/Arduino/libraries;D:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;D:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard;../../../SmartCar;D:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/;D:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/;D:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;D:/Program Files (x86)/Arduino/libraries/Servo/src;D:/Program Files (x86)/Arduino/libraries/Servo/src/utility;</VMSETTING_IncludePaths>
+    <VMSETTING_IncludePaths>D:/Program Files (x86)/Arduino/libraries;D:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Users/WeeeeeeB/Documents/Arduino/libraries;D:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;D:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard;../../../SmartCar;D:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/;D:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/;D:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;D:/Program Files (x86)/Arduino/libraries/Servo/src;D:/Program Files (x86)/Arduino/libraries/Servo/src/utility;../../../Arduino-coding;C:/Users/WeeeeeeB/Documents/Arduino/libraries/PID_v1;C:/Users/WeeeeeeB/Documents/Arduino/libraries/PID_v1/utility;../_micro-api/libraries/Servo/src;../_micro-api/libraries/Servo/src/utility;../_micro-api/libraries/PID_v1;../_micro-api/libraries/PID_v1/utility;</VMSETTING_IncludePaths>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
@@ -135,6 +141,7 @@
     <ListValues>
       <Value>__AVR_ATmega328p__</Value>
       <Value>__AVR_ATmega328P__</Value>
+      <Value>_VMDEBUG=1</Value>
       <Value>ARDUINO=10608</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=16000000L</Value>
@@ -145,14 +152,16 @@
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>D:/Program Files (x86)/Arduino/libraries/Servo/src</Value>
-      <Value>D:/Program Files (x86)/Arduino/libraries/Servo/src/utility</Value>
+      <Value>../_micro-api/libraries/PID_v1</Value>
+      <Value>../_micro-api/libraries/PID_v1/utility</Value>
+      <Value>../_micro-api/libraries/Servo/src</Value>
+      <Value>../_micro-api/libraries/Servo/src/utility</Value>
       <Value>D:/Program Files (x86)/Arduino/libraries</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Users/WeeeeeeB/Documents/Arduino/libraries</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard</Value>
-      <Value>../../../SmartCar</Value>
+      <Value>../../../Arduino-coding</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
@@ -169,6 +178,7 @@
     <ListValues>
       <Value>__AVR_ATmega328p__</Value>
       <Value>__AVR_ATmega328P__</Value>
+      <Value>_VMDEBUG=1</Value>
       <Value>ARDUINO=10608</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=16000000L</Value>
@@ -179,14 +189,16 @@
   </avrgcccpp.compiler.symbols.DefSymbols>
   <avrgcccpp.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>D:/Program Files (x86)/Arduino/libraries/Servo/src</Value>
-      <Value>D:/Program Files (x86)/Arduino/libraries/Servo/src/utility</Value>
+      <Value>../_micro-api/libraries/PID_v1</Value>
+      <Value>../_micro-api/libraries/PID_v1/utility</Value>
+      <Value>../_micro-api/libraries/Servo/src</Value>
+      <Value>../_micro-api/libraries/Servo/src/utility</Value>
       <Value>D:/Program Files (x86)/Arduino/libraries</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Users/WeeeeeeB/Documents/Arduino/libraries</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard</Value>
-      <Value>../../../SmartCar</Value>
+      <Value>../../../Arduino-coding</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/</Value>
       <Value>D:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
@@ -200,14 +212,32 @@
   <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
 </AvrGccCpp>
     </ToolchainSettings>
-    <VMSETTING_IncludePaths>D:/Program Files (x86)/Arduino/libraries;D:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Users/WeeeeeeB/Documents/Arduino/libraries;D:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;D:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard;../../../SmartCar;D:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/;D:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/;D:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;D:/Program Files (x86)/Arduino/libraries/Servo/src;D:/Program Files (x86)/Arduino/libraries/Servo/src/utility;</VMSETTING_IncludePaths>
+    <VMSETTING_IncludePaths>D:/Program Files (x86)/Arduino/libraries;D:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Users/WeeeeeeB/Documents/Arduino/libraries;D:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;D:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard;../../../SmartCar;D:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/;D:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/;D:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;D:/Program Files (x86)/Arduino/libraries/Servo/src;D:/Program Files (x86)/Arduino/libraries/Servo/src/utility;../../../Arduino-coding;C:/Users/WeeeeeeB/Documents/Arduino/libraries/PID_v1;C:/Users/WeeeeeeB/Documents/Arduino/libraries/PID_v1/utility;../_micro-api/libraries/Servo/src;../_micro-api/libraries/Servo/src/utility;../_micro-api/libraries/PID_v1;../_micro-api/libraries/PID_v1/utility;</VMSETTING_IncludePaths>
   </PropertyGroup>
   <ItemGroup>
     <None Include="SmartCar.ino">
       <SubType>compile</SubType>
     </None>
+    <None Include="src\_micro-api\libraries\PID_v1\keywords.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\_micro-api\libraries\Servo\keywords.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\_micro-api\libraries\Servo\library.properties">
+      <SubType>compile</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="src\_micro-api\" />
+    <Folder Include="src\_micro-api\libraries\" />
+    <Folder Include="src\_micro-api\libraries\PID_v1\" />
+    <Folder Include="src\_micro-api\libraries\Servo\" />
+    <Folder Include="src\_micro-api\libraries\Servo\src\" />
+    <Folder Include="src\_micro-api\libraries\Servo\src\avr\" />
+    <Folder Include="src\_micro-api\libraries\Servo\src\samd\" />
+    <Folder Include="src\_micro-api\libraries\Servo\src\sam\" />
     <Folder Include="__vm\" />
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +245,39 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Motor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\_micro-api\libraries\PID_v1\PID_v1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\_micro-api\libraries\PID_v1\PID_v1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\_micro-api\libraries\Servo\src\avr\Servo.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\_micro-api\libraries\Servo\src\avr\ServoTimers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\_micro-api\libraries\Servo\src\samd\Servo.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\_micro-api\libraries\Servo\src\samd\ServoTimers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\_micro-api\libraries\Servo\src\samd\ServoTimersSamd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\_micro-api\libraries\Servo\src\sam\Servo.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\_micro-api\libraries\Servo\src\sam\ServoTimers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\_micro-api\libraries\Servo\src\Servo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="__vm\.Arduino-coding.vsarduino.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="__vm\.SmartCar.vsarduino.h">

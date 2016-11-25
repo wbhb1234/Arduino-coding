@@ -1,10 +1,11 @@
 //#include "Motor.h"
 #include <Servo.h>
+#include <PID_v1.h>
 
 Servo duoji;			//创建一个舵机类；
-#define startpos 90		//舵机中间值
-#define RightMAX 125	//舵机→最大值
-#define LeftMAX 45		//舵机←最大值
+#define startpos 93		//舵机中间值
+#define RightMAX 37	//舵机→最大值
+#define LeftMAX -37		//舵机←最大值
 int pos = startpos;		//保存舵机的角度
 
 int StartSS=14;		//传感器第一引脚
@@ -17,6 +18,10 @@ const int ENA =7;
 const int INA = 5;
 const int INB = 6;
 const int ENB =8;
+//PID Control
+double Setpoint, Input, Output;
+
+PID myPID(&Input, &Output, &Setpoint,2,5,1, DIRECT);
 
 void sensorinit(int s1);	//传感器初始化
 void getpostion(void);		//获取位置信息
@@ -31,38 +36,37 @@ void setup()
 	//传感器初始化AN0~AN4
 	sensorinit(StartSS);
 	//测试期间电机的速度可以设一个较低值测试。
-	pinMode(INA,OUTPUT);
-	digitalWrite(INA,HIGH);
-	pinMode(INB,OUTPUT);
-	digitalWrite(INB,HIGH);
 	pinMode(ENA,OUTPUT);
+	digitalWrite(ENA,HIGH);
 	pinMode(ENB,OUTPUT);
-	analogWrite(ENA,0);
-	analogWrite(ENB,100);
+	digitalWrite(ENB,HIGH);
+	pinMode(INA,OUTPUT);
+	pinMode(INB,OUTPUT);
+	analogWrite(INA,0);
+	analogWrite(INB,100);
 	//串口初始化 
 	Serial.begin(9600);
 	while (!Serial) {
 		; // wait for serial port to connect. Needed for native USB port only
 	}
 	
+	 getpostion();
+	 Input = position_now;
+	 Setpoint = 5;
+	 myPID.SetMode(AUTOMATIC);
+	 myPID.SetOutputLimits(LeftMAX, RightMAX);
+	
 }
 
 void loop()
 {
   /* add main program code here */
-   // getpostion();
-   delay(3000);
+    getpostion();
+	Input = position_now;
+	myPID.Compute();
    // changeservo();
-   for (pos = LeftMAX; pos <= RightMAX; pos += 1) { // goes from 0 degrees to 180 degrees
-	     // in steps of 1 degree
-	     duoji.write(pos);              // tell servo to go to position in variable 'pos'
-	     delay(15);                       // waits 15ms for the servo to reach the position
-   }
-   for (pos = RightMAX; pos >= LeftMAX; pos -= 1) { // goes from 180 degrees to 0 degrees
-	     duoji.write(pos);              // tell servo to go to position in variable 'pos'
-	     delay(15);                       // waits 15ms for the servo to reach the position
-   }
-  
+	pos = (int)Output+startpos;
+	duoji.write(pos);
 }
 void sensorinit(int s1)
 {
