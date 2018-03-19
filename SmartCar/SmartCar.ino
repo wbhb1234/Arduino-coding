@@ -1,19 +1,22 @@
 //#include "Motor.h"
+/*
+ * ç‰ˆæœ¬æ›´æ–° V1.0
+*/
 #include <Servo.h>
 #include <PID_v1.h>
 
-Servo duoji;			//´´½¨Ò»¸ö¶æ»úÀà£»
-#define startpos 93		//¶æ»úÖĞ¼äÖµ
-#define RightMAX 37	//¶æ»ú¡ú×î´óÖµ
-#define LeftMAX -37		//¶æ»ú¡û×î´óÖµ
-int pos = startpos;		//±£´æ¶æ»úµÄ½Ç¶È
+Servo duoji;			//åˆ›å»ºä¸€ä¸ªèˆµæœºç±»ï¼›
+#define startpos 93		//èˆµæœºä¸­é—´å€¼
+#define RightMAX 37	//èˆµæœºâ†’æœ€å¤§å€¼
+#define LeftMAX -37		//èˆµæœºâ†æœ€å¤§å€¼
+int pos = startpos;		//ä¿å­˜èˆµæœºçš„è§’åº¦
 
-int StartSS=14;		//´«¸ĞÆ÷µÚÒ»Òı½Å
-int pos_val[5]={0};		//Î»ÖÃĞÅÏ¢±£´æ
-int position_now;		//µ±Ç°Î»ÖÃĞÅÏ¢
-int position_old;		//ÉÏÒ»Ê±¿ÌÎ»ÖÃĞÅÏ¢
+int StartSS=14;		//ä¼ æ„Ÿå™¨ç¬¬ä¸€å¼•è„š
+int pos_val[5]={0};		//ä½ç½®ä¿¡æ¯ä¿å­˜
+int position_now;		//å½“å‰ä½ç½®ä¿¡æ¯
+int position_old;		//ä¸Šä¸€æ—¶åˆ»ä½ç½®ä¿¡æ¯
 
-//µç»úÒı½Å¶¨Òå
+//ç”µæœºå¼•è„šå®šä¹‰
 const int ENA =7;
 const int INA = 5;
 const int INB = 6;
@@ -23,19 +26,19 @@ double Setpoint, Input, Output;
 
 PID myPID(&Input, &Output, &Setpoint,2,5,1, DIRECT);
 
-void sensorinit(int s1);	//´«¸ĞÆ÷³õÊ¼»¯
-void getpostion(void);		//»ñÈ¡Î»ÖÃĞÅÏ¢
-void changeservo(void);		//¸Ä±ä¶æ»ú½Ç¶È
+void sensorinit(int s1);	//ä¼ æ„Ÿå™¨åˆå§‹åŒ–
+void getpostion(void);		//è·å–ä½ç½®ä¿¡æ¯
+void changeservo(void);		//æ”¹å˜èˆµæœºè§’åº¦
 
 void setup()
 {
 	/* add setup code here */
-	//¶æ»ú³õÊ¼»¯
-	duoji.attach(9);//Ö¸¶¨Ò»¸öarduinoÒı½Å £¬ÕâÀïÎÒÖ¸¶¨µÄÊÇÒı½Å9
-	duoji.write(pos);//ÏÈÈÃ¶æ»ú¹éÎ»£¬»ØÖĞ¡£ºóÃæÍ¨¹ı¸Ä±äpos À´¸Ä±ä¶æ»ú½Ç¶È¡£
-	//´«¸ĞÆ÷³õÊ¼»¯AN0~AN4
+	//èˆµæœºåˆå§‹åŒ–
+	duoji.attach(9);//æŒ‡å®šä¸€ä¸ªarduinoå¼•è„š ï¼Œè¿™é‡Œæˆ‘æŒ‡å®šçš„æ˜¯å¼•è„š9
+	duoji.write(pos);//å…ˆè®©èˆµæœºå½’ä½ï¼Œå›ä¸­ã€‚åé¢é€šè¿‡æ”¹å˜pos æ¥æ”¹å˜èˆµæœºè§’åº¦ã€‚
+	//ä¼ æ„Ÿå™¨åˆå§‹åŒ–AN0~AN4
 	sensorinit(StartSS);
-	//²âÊÔÆÚ¼äµç»úµÄËÙ¶È¿ÉÒÔÉèÒ»¸ö½ÏµÍÖµ²âÊÔ¡£
+	//æµ‹è¯•æœŸé—´ç”µæœºçš„é€Ÿåº¦å¯ä»¥è®¾ä¸€ä¸ªè¾ƒä½å€¼æµ‹è¯•ã€‚
 	pinMode(ENA,OUTPUT);
 	digitalWrite(ENA,HIGH);
 	pinMode(ENB,OUTPUT);
@@ -44,7 +47,7 @@ void setup()
 	pinMode(INB,OUTPUT);
 	analogWrite(INA,0);
 	analogWrite(INB,100);
-	//´®¿Ú³õÊ¼»¯ 
+	//ä¸²å£åˆå§‹åŒ– 
 	Serial.begin(9600);
 	while (!Serial) {
 		; // wait for serial port to connect. Needed for native USB port only
@@ -71,28 +74,28 @@ void loop()
 void sensorinit(int s1)
 {
 		int i;
-		//Òı½ÅÉèÎªÊäÈë
+		//å¼•è„šè®¾ä¸ºè¾“å…¥
 		for (i=0;i<5;i++)
 		{
 			pinMode(s1+i,INPUT);
 		}
-		//¶ÁÈ¡Êı¾İµ½Êı×é
+		//è¯»å–æ•°æ®åˆ°æ•°ç»„
 
 }
-//Í¨¹ı¶ÁÈ¡´«¸ĞÆ÷ĞÅÏ¢£¬»ñÈ¡³µÉíÎ»ÖÃĞÅÏ¢¡£
+//é€šè¿‡è¯»å–ä¼ æ„Ÿå™¨ä¿¡æ¯ï¼Œè·å–è½¦èº«ä½ç½®ä¿¡æ¯ã€‚
 void getpostion(void)
 {
 	int Fd;
 	int Psd=0;
 	int possum=0;
 	int i,j;
-	//¼ÆËãÑ¹µãµÄÊıÁ¿
+	//è®¡ç®—å‹ç‚¹çš„æ•°é‡
 	for (i=0;i<5;i++) 
 	{
 		pos_val[i] = digitalRead(StartSS+i);
 	}
 	possum = pos_val[0]+pos_val[1]+pos_val[2]+pos_val[3]+pos_val[4];
-	//¼Ó´òÓ¡
+	//åŠ æ‰“å°
 	Serial.print("IR:");
 	Serial.print(pos_val[0]);Serial.print(" ");
 	Serial.print(pos_val[1]);Serial.print(" ");
@@ -100,19 +103,19 @@ void getpostion(void)
 	Serial.print(pos_val[3]);Serial.print(" ");
 	Serial.println(pos_val[4]);
 	
-	//ÂË³ıµôÃ»ÓĞÑ¹µãºÍÑ¹µÄµãÊı³¬¹ı2µãÒÔÉÏµÄÇé¿ö¡£Èç¹ûÓöµ½ÕâÖÖÇé¿ö£¬Î»ÖÃĞÅÏ¢²»±ä¡£
+	//æ»¤é™¤æ‰æ²¡æœ‰å‹ç‚¹å’Œå‹çš„ç‚¹æ•°è¶…è¿‡2ç‚¹ä»¥ä¸Šçš„æƒ…å†µã€‚å¦‚æœé‡åˆ°è¿™ç§æƒ…å†µï¼Œä½ç½®ä¿¡æ¯ä¸å˜ã€‚
 	if (possum ==5 || possum < 3)
 	{
 		position_now = position_old;
 	}
-	//ºÚÏßÑ¹Ò»µãºÍÑ¹Á½µãÊÇÕı³£µÄ½á¹û,¼ÆËãÎ»ÖÃ¡£
+	//é»‘çº¿å‹ä¸€ç‚¹å’Œå‹ä¸¤ç‚¹æ˜¯æ­£å¸¸çš„ç»“æœ,è®¡ç®—ä½ç½®ã€‚
 	else
 	{
 			for (j=0;j<5;j++)
 			{
 				if (Psd ==0 )
 				{
-					if (pos_val[j] == 0) //ºÚÉ«Ã»ÓĞ·´Éä£¬Îª0
+					if (pos_val[j] == 0) //é»‘è‰²æ²¡æœ‰åå°„ï¼Œä¸º0
 					{
 						Fd = j;
 						Psd = 1;
@@ -120,14 +123,14 @@ void getpostion(void)
 				}
 			}	
 	}
-	//ºÚÏßÑ¹Ò»µã ¸ù¾İ¹«Ê½¼ÆËã³öÎ»ÖÃ
+	//é»‘çº¿å‹ä¸€ç‚¹ æ ¹æ®å…¬å¼è®¡ç®—å‡ºä½ç½®
 	if (possum == 4)
 	{
 		position_now = Fd*2+1;
 	}
-	//ºÚÏßÑ¹Á½µã ¸ù¾İ¹«Ê½¼ÆËã³öÎ»ÖÃ
+	//é»‘çº¿å‹ä¸¤ç‚¹ æ ¹æ®å…¬å¼è®¡ç®—å‡ºä½ç½®
 	else if(possum == 3) position_now = (Fd+1)*2;
-	//±£´æÉÏÒ»´Î¼ÆËã³öµÄÎ»ÖÃ
+	//ä¿å­˜ä¸Šä¸€æ¬¡è®¡ç®—å‡ºçš„ä½ç½®
 	position_old = position_now;
 	Serial.print("Position:");
 	Serial.println(position_now);
